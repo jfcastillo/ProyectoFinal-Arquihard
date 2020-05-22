@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace ProyectoFinalArquiHard
@@ -7,22 +8,22 @@ namespace ProyectoFinalArquiHard
     {
         static void Main(string[] args)
         {
-            //% Versi�n 1
-            //    ImRGB = ImRGB0;
-            //for R = 1: Rows
-            //                    for C = 1:Columns
-            //        ImRGB(R, C, 1) = 255 - ImRGB(R, C, 1);  % Image[i, j].R
-            //        ImRGB(R, C, 2) = 255 - ImRGB(R, C, 2); % Image[i, j].G
-            //        ImRGB(R, C, 3) = 255 - ImRGB(R, C, 3);  % Image[i, j].B
-            //        end
-            //    end
-            //    figure
-            //    subplot(2, 1, 1)
-            //    imshow(ImRGB0); title('ImRGB0');
-            //subplot(2, 1, 2);
-            //imshow(ImRGB); title('Version1');
-            Bitmap imagen = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen1.png", true);
-            for(int x = 0; x < imagen.Width; x++)
+            
+            Bitmap imagen = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
+            Bitmap nueva = version2(imagen);
+            nueva.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\nueva64.png");
+            
+        }
+
+        public static Bitmap version1(Bitmap imagen)
+        {
+            Stopwatch timeA = new Stopwatch();
+            timeA.Restart();
+            timeA.Start();
+            long tiempo = 0;
+            int j = imagen.Width;
+            int k = imagen.Height;
+            for (int x = 0; x < imagen.Width; x++)
             {
                 for (int y = 0; y < imagen.Height; y++)
                 {
@@ -30,15 +31,63 @@ namespace ProyectoFinalArquiHard
                     int r = 255 - color.R;
                     int g = 255 - color.G;
                     int b = 255 - color.B;
-
-                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));
-                    imagen.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\nueva.png");
-
-
-
+                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));                    
                 }
+                
+            }
+            timeA.Stop();
+
+            tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (j * k);
+            Console.WriteLine(j + " " + k + " Tiempo " + tiempo);
+            return imagen;
+        }
+        public static Bitmap version2(Bitmap imagen)
+        {
+            Stopwatch timeA = new Stopwatch();
+            long tiempo = 0;
+            int rows = imagen.Width;
+            int columns = imagen.Height;
+            timeA.Restart();
+            timeA.Start();            
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    Color color = imagen.GetPixel(x, y);
+                    int r = 255 - color.R;
+
+                    imagen.SetPixel(x, y, Color.FromArgb(r, color.G, color.B));
+                }
+
+            }
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    Color color = imagen.GetPixel(x, y);
+                    
+                    int g = 255 - color.G;
+                    imagen.SetPixel(x, y, Color.FromArgb(color.R, g, color.B));
+                }
+
+            }
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    Color color = imagen.GetPixel(x, y);
+
+                    int b = 255 - color.B;
+                    imagen.SetPixel(x, y, Color.FromArgb(color.R, color.G, b));
+                }
+
             }
 
+            timeA.Stop();
+            tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (rows * columns);
+            Console.WriteLine(rows + " " + columns + " Tiempo " + tiempo);
+            return imagen;
         }
     }
+
 }
