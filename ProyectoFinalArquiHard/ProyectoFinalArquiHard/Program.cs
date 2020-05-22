@@ -10,7 +10,7 @@ namespace ProyectoFinalArquiHard
         {
             
             Bitmap imagen = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
-            Bitmap nueva = version2(imagen);
+            Bitmap nueva = version3(imagen);
             nueva.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\nueva64.png");
             
         }
@@ -21,11 +21,11 @@ namespace ProyectoFinalArquiHard
             timeA.Restart();
             timeA.Start();
             long tiempo = 0;
-            int j = imagen.Width;
-            int k = imagen.Height;
-            for (int x = 0; x < imagen.Width; x++)
+            int rows = imagen.Width;
+            int columns = imagen.Height;
+            for (int x = 0; x < rows; x++)
             {
-                for (int y = 0; y < imagen.Height; y++)
+                for (int y = 0; y < columns; y++)
                 {
                     Color color = imagen.GetPixel(x, y);
                     int r = 255 - color.R;
@@ -37,8 +37,8 @@ namespace ProyectoFinalArquiHard
             }
             timeA.Stop();
 
-            tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (j * k);
-            Console.WriteLine(j + " " + k + " Tiempo " + tiempo);
+            tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (rows * columns);
+            Console.WriteLine(rows + " " + columns + " Tiempo " + tiempo);
             return imagen;
         }
         public static Bitmap version2(Bitmap imagen)
@@ -84,6 +84,32 @@ namespace ProyectoFinalArquiHard
             }
 
             timeA.Stop();
+            tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (rows * columns);
+            Console.WriteLine(rows + " " + columns + " Tiempo " + tiempo);
+            return imagen;
+        }
+        public static Bitmap version3(Bitmap imagen)
+        {
+            Stopwatch timeA = new Stopwatch();
+            timeA.Restart();
+            timeA.Start();
+            long tiempo = 0;
+            int rows = imagen.Width;
+            int columns = imagen.Height;
+            for (int y = 0; y < columns; y++)
+            {
+                for (int x = 0; x < rows; x++)
+                {
+                    Color color = imagen.GetPixel(x, y);
+                    int r = 255 - color.R;
+                    int g = 255 - color.G;
+                    int b = 255 - color.B;
+                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+
+            }
+            timeA.Stop();
+
             tiempo = (long)(timeA.Elapsed.TotalMilliseconds * 1000000) / (rows * columns);
             Console.WriteLine(rows + " " + columns + " Tiempo " + tiempo);
             return imagen;
