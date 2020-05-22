@@ -183,19 +183,19 @@ namespace ProyectoFinalArquiHard
                     r = 255 - color1.R;
                     g = 255 - color1.G;
                     b = 255 - color1.B;
-                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    imagen.SetPixel(x, y + 1, Color.FromArgb(r, g, b));
 
                     Color color2 = imagen.GetPixel(x + 1, y);
                     r = 255 - color2.R;
                     g = 255 - color2.G;
                     b = 255 - color2.B;
-                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    imagen.SetPixel(x + 1, y, Color.FromArgb(r, g, b));
 
                     Color color3 = imagen.GetPixel(x + 1, y + 1);
                     r = 255 - color3.R;
                     g = 255 - color3.G;
                     b = 255 - color3.B;
-                    imagen.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    imagen.SetPixel(x + 1, y + 1, Color.FromArgb(r, g, b));
                 }
 
             }
