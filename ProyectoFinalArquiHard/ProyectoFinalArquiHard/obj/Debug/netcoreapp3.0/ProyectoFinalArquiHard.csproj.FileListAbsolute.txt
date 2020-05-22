@@ -1,0 +1,17 @@
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.exe
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.csprojAssemblyReference.cache
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.AssemblyInfoInputs.cache
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.AssemblyInfo.cs
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.deps.json
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.runtimeconfig.json
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.runtimeconfig.dev.json
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\ProyectoFinalArquiHard.pdb
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\System.Drawing.Common.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.csproj.CopyComplete
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.dll
+F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\ProyectoFinalArquiHard\ProyectoFinalArquiHard\obj\Debug\netcoreapp3.0\ProyectoFinalArquiHard.pdb
