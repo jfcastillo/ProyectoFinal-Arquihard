@@ -10,8 +10,8 @@ namespace ProyectoFinalArquiHard
         static void Main(string[] args)
         {
             String line;
-            StreamReader file = new StreamReader(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\casos.txt");
-            StreamWriter sw = new StreamWriter(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\datos.txt");
+            StreamReader file = new StreamReader(@"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\casos.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\datos.txt");
             long time = 0;
             while ((line = file.ReadLine()) != null)
             {
@@ -19,7 +19,7 @@ namespace ProyectoFinalArquiHard
                 String algoritmo = dato[0];
                 String tamaño = dato[1];
                 String bits = dato[2];
-                String ruta = @"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img" + bits + "b" + tamaño + ".png";
+                String ruta = @"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\img\img" + bits + "b" + tamaño + ".png";
 
                 //if (bits.Equals("96"))
                 //{
