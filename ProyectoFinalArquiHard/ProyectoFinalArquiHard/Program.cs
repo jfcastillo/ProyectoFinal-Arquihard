@@ -9,110 +9,41 @@ namespace ProyectoFinalArquiHard
     {
         static void Main(string[] args)
         {
-            String line;
-            StreamReader file = new StreamReader(@"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\casos.txt");
-            StreamWriter sw = new StreamWriter(@"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\datos.txt");
+            //Se probó anteriormente que las 5 versiones de algoritmos convertian la imagen igual, por eso se retorna el tiempo.
+            //Variable donde se almacena el tiempo de ejecución
             long time = 0;
-            while ((line = file.ReadLine()) != null)
+            //Variable para seleccionar el algoritmo: 1,2,3,4,5
+            String algoritmo = "5";
+            //Variable para seleccionar el tamaño: 64,160,512,1500
+            String tamaño = "1500";
+            //Variable para seleccionar los bits: 24,32,48
+            String bits = "48";
+            //Ruta en la que se encuentra la imagen a pasar por las versiones de los algoritmos
+            String ruta = @"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img" + bits + "b" + tamaño + ".png";
+            Bitmap imagen = new Bitmap(ruta, true); 
+
+            switch (algoritmo)
             {
-                String[] dato = line.Split();
-                String algoritmo = dato[0];
-                String tamaño = dato[1];
-                String bits = dato[2];
-                String ruta = @"C:\Users\sergi\OneDrive\Semestre\Arquitectura de computadores y Laboratorio\Taller Final\ProyectoFinal-Arquihard\img\img" + bits + "b" + tamaño + ".png";
-
-                //if (bits.Equals("96"))
-                //{
-                //    ruta = ruta + ".bmp";
-                //}
-                //else
-                //{
-                //    ruta = ruta + ".png";
-                //}
-                Bitmap imagen = new Bitmap(ruta, true);
-
-                switch (algoritmo)
-                {
-                    case "1":
-                        time = version1(imagen);
-                        break;
-                    case "2":
-                        time = version2(imagen);
-                        break;
-                    case "3":
-                        time = version3(imagen);
-                        break;
-                    case "4":
-                        time = version4(imagen);
-                        break;
-                    case "5":
-                        time = version5(imagen);
-                        break;
-
-
-                    default:
-
-                        break;
+                case "1":
+                    time = version1(imagen);
+                    break;
+                case "2":
+                    time = version2(imagen);
+                    break;
+                case "3":
+                    time = version3(imagen);
+                    break;
+                case "4":
+                    time = version4(imagen);
+                    break;
+                case "5":
+                    time = version5(imagen);
+                    break;
+                default:
+                    break;
                 }
-                sw.WriteLine(time);
-
-            }
-            sw.Close();
-            file.Close();
-
-            //Bitmap original = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img.png", true);
-
-
-            //Image imagen = Image.FromFile(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img.png");
-
-
-            //Bitmap img24b64 = ConvertTo24bpp(imagen, 64, 64);
-            //img24b64.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img24b64.png");
-            //Bitmap img24b160 = ConvertTo24bpp(imagen, 160, 160);
-            //img24b160.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img24b160.png");
-            //Bitmap img24b512 = ConvertTo24bpp(imagen, 512, 512);
-            //img24b512.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img24b512.png");
-            //Bitmap img24b1500 = ConvertTo24bpp(imagen, 1500, 1500);
-            //img24b1500.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img24b1500.png");
-
-            //Bitmap img32b64 = ConvertTo32bpp(imagen, 64, 64);
-            //img32b64.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img32b64.png");
-            //Bitmap img32b160 = ConvertTo32bpp(imagen, 160, 160);
-            //img32b160.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img32b160.png");
-            //Bitmap img32b512 = ConvertTo32bpp(imagen, 512, 512);
-            //img32b512.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img32b512.png");
-            //Bitmap img32b1500 = ConvertTo32bpp(imagen, 1500, 1500);
-            //img32b1500.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img32b1500.png");
-
-
-            //Bitmap img48b64 = ConvertTo48bpp(imagen, 64, 64);
-            //img48b64.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img48b64.png");
-            //Bitmap img48b160 = ConvertTo48bpp(imagen, 160, 160);
-            //img48b160.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img48b160.png");
-            //Bitmap img48b512 = ConvertTo48bpp(imagen, 512, 512);
-            //img48b512.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img48b512.png");
-            //Bitmap img48b1500 = ConvertTo48bpp(imagen, 1500, 1500);
-            //img48b1500.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\img\img48b1500.png");
-
-            //Bitmap nueva1 = version1(imagen1);
-            //nueva1.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\1nueva64.png");
-            //Bitmap imagen2 = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
-            //Bitmap nueva2 = version2(imagen2);
-            //nueva2.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\2nueva64.png");
-            //Bitmap imagen3 = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
-            //Bitmap nueva3 = version3(imagen3);
-            //nueva3.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\3nueva64.png");
-            //Bitmap imagen4 = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
-            //Bitmap nueva4 = version4(imagen4);
-            //nueva4.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\4nueva64.png");
-            //Bitmap imagen5 = new Bitmap(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\imagen64.png", true);
-            //Bitmap nueva5 = version5(imagen5);x
-            //nueva5.Save(@"F:\Documentos\ICESI\7mo Semestre\Arquitectura de hardware\Proyecto final\5nueva64.png");
-
-
-            //64,160,512,1500
         }
-        
+        //Método para convertir la imagen a 24 bits por pixel
         public static Bitmap ConvertTo24bpp(Image img, int w, int h)
         {
             var bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
@@ -120,6 +51,7 @@ namespace ProyectoFinalArquiHard
                 gr.DrawImage(img, new Rectangle(0, 0, w, h));
             return bmp;
         }
+        //Método para convertir la imagen a 32 bits por pixel
         public static Bitmap ConvertTo32bpp(Image img, int w, int h)
         {
             var bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
@@ -127,6 +59,7 @@ namespace ProyectoFinalArquiHard
                 gr.DrawImage(img, new Rectangle(0, 0, w, h));
             return bmp;
         }
+        //Método para convertir la imagen a 48 bits por pixel
         public static Bitmap ConvertTo48bpp(Image img, int w, int h)
         {
             var bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format48bppRgb);
